@@ -28,7 +28,7 @@ func inputInt(prompt string) int {
 		if err != nil {
 			fmt.Println("Ошибка: нужно ввести только число!")
 			var tmp string
-			fmt.Scanln(&tmp) // очищаем ввод
+			fmt.Scanln(&tmp)
 			continue
 		}
 		return value
@@ -61,7 +61,7 @@ func main() {
 
 		switch cmd {
 		case 1:
-			// Добавляем нового сотрудника
+			// Добавление нового сотрудника
 			empl := new(Employee)
 			empl.Name = inputLetters("Имя:")
 			empl.Age = inputInt("Возраст:")
@@ -82,7 +82,7 @@ func main() {
 			}
 
 		case 2:
-			// Удаляем сотрудника
+			// Удаление сотрудника
 			idx := inputInt("Введите номер сотрудника для удаления:")
 			if idx >= 0 && idx < size && empls[idx] != nil {
 				empls[idx] = nil
@@ -92,7 +92,7 @@ func main() {
 			}
 
 		case 3:
-			// Выводим список сотрудников
+			// Вывод списока сотрудников
 			fmt.Println("\nСписок сотрудников:")
 			for i := 0; i < size; i++ {
 				if empls[i] != nil {
